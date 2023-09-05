@@ -17,6 +17,7 @@ public class CollisionDetector : MonoBehaviour
         if (collision.gameObject.tag == "Obstacle")
         {
             Destroy(gameObject.GetComponent<PlayerMovement>());
+            Debug.Log(this.gameObject.transform.name);
         }
     }
 }

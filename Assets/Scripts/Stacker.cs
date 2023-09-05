@@ -7,6 +7,13 @@ public class Stacker : MonoBehaviour
     public Transform _stackPosition;
     [SerializeField]
     StackScoreShower _scoreShower;
+    [SerializeField]
+    Animator animator;
+
+    private void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     public void StackCubeUnderParent(Collision cube)
     {
@@ -16,5 +23,6 @@ public class Stacker : MonoBehaviour
         cube.gameObject.AddComponent<CollisionDetector>()._stacker = this;
         cube.gameObject.transform.parent = null;
         _scoreShower.OnShowText();
+        animator.Play("Jumping");
     }
 }

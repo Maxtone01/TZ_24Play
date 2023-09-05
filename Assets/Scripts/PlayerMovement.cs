@@ -26,10 +26,10 @@ public class PlayerMovement : MonoBehaviour
                     transform.position = new Vector3(
                         transform.position.x,
                         transform.position.y,
-                        transform.position.z + touch.deltaPosition.x * 0.003f);
+                        transform.position.z + -touch.deltaPosition.x * 0.003f);
                 }
             }
-            _rigidBody.transform.Translate(-transform.forward * 2f * Time.deltaTime, Space.World);
+            _rigidBody.transform.Translate(transform.forward * 2f * Time.deltaTime, Space.World);
         }
     }
 }
